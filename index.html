@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Monitoring System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="loginPage" class="auth-page">
+  <div class="auth-card">
+    <h1>Scholarship Monitoring System</h1>
+    <p>Student Scholarship Monitoring and Academic Compliance System</p>
+
+    <form id="loginForm">
+      <input id="loginEmail" type="email" placeholder="Email" required>
+      <input id="loginPassword" type="password" placeholder="Password" required>
+      <button type="submit">Log In</button>
+      <p id="loginNotice" class="notice hidden"></p>
+      <p id="loginError" class="error"></p>
+    </form>
+
+    <div class="demo-box">
+      <strong>ADMIN Account</strong>
+      <p>Admin: admin@scholarship.local / admin123</p>
+    </div>
+
+    <p>Are you a scholar? <button id="showRegister" class="link-btn" type="button">Create an account</button></p>
+  </div>
+</section>
+
+<!-- SCHOLAR REGISTRATION -->
+<section id="registerPage" class="auth-page hidden">
+  <div class="auth-card">
+    <h1>Scholar Registration</h1>
+    <p>Create your scholar account.</p>
+
+    <form id="registerForm">
+      <input id="regFullName" placeholder="Full Name" required>
+      <input id="regStudentId" placeholder="Student ID" required>
+      <input id="regEmail" type="email" placeholder="Email" required>
+      <input id="regPassword" type="password" minlength="6" placeholder="Password (minimum 6 characters)" required>
+      <input id="regDegree" placeholder="Degree Program" required>
+      <input id="regYear" placeholder="Year Level" required>
+      <select id="regScholarship" required>
+        <option value="">Select Scholarship Program</option>
+      </select>
+      <button type="submit">Register Scholar Account</button>
+      <p id="registerError" class="error"></p>
+    </form>
+
+    <button id="backToLogin" class="link-btn" type="button">Back to Login</button>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div>
+      <h1>Scholarship Monitoring System</h1>
+      <p id="userWelcome"></p>
+    </div>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+    <main id="mainContent" class="content"></main>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
